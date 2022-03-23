@@ -9,6 +9,7 @@ const createUser = async (req, res) => {
 const getUser = async (req, res) => {
   const users = await User.find();
   res.status(200).json({ success: true, users });
+  console.log(users);
 };
 module.exports = createUser;
 module.exports = getUser;
