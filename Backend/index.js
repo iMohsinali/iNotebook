@@ -1,8 +1,9 @@
 const express = require("express");
 const connectToMogo = require("./db");
 const app = express();
-
+const cors = require("cors");
 app.use(express.json());
+app.use(cors());
 const port = 5000;
 app.use("/api/auth", require("./Routes/auth"));
 app.use("/api/notes", require("./Routes/notes"));
