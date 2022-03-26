@@ -14,15 +14,15 @@ router.post(
   fetchuser,
   [
     body("title").isLength({ min: 3 }),
-    body("descreption").isLength({ min: 10 }),
+    body("description").isLength({ min: 10 }),
   ],
   async (req, res) => {
-    const { title, descreption, tag } = req.body;
+    const { title, description, tag } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const notes = new Note({ title, descreption, tag, user: req.user.id });
+    const notes = new Note({ title, description, tag, user: req.user.id });
     const saveote = await notes.save();
     res.json(saveote);
   }
@@ -33,14 +33,14 @@ router.put(
   fetchuser,
 
   async (req, res) => {
-    const { title, descreption, tag } = req.body;
+    const { title, description, tag } = req.body;
     //new note
     const newNote = {};
     if (title) {
       newNote.title = title;
     }
-    if (descreption) {
-      newNote.descreption = descreption;
+    if (description) {
+      newNote.description = description;
     }
     if (tag) {
       newNote.tag = tag;

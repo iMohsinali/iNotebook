@@ -10,13 +10,13 @@ const NoteSchema = new Schema({
     type: String,
     required: true,
   },
-  descreption: {
+  description: {
     type: String,
     required: true,
   },
   tag: {
     type: String,
-    default: "Genral",
+    default: "General",
   },
   date: {
     type: Date,

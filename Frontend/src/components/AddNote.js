@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
-import notesContext from "../Context/notes/notesContext";
+import noteContext from "../Context/notes/notesContext";
 
 const AddNote = () => {
-  const context = useContext(notesContext);
+  const context = useContext(noteContext);
   const { addNote } = context;
 
   const [note, setNote] = useState({ title: "", description: "", tag: "" });
 
   const handleClick = (e) => {
+    e.preventDefault();
     addNote(note.title, note.description, note.tag);
     setNote({ title: "", description: "", tag: "" });
   };
@@ -67,7 +68,7 @@ const AddNote = () => {
         </div>
 
         <button
-          disabled={note.title.length < 5 || note.description.length < 5}
+          disabled={note.title.length < 5 || note.description.length < 10}
           type="submit"
           className="btn btn-primary"
           onClick={handleClick}
