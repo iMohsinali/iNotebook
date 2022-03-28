@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gainsboro;
 }
 
 code {
@@ -13,4 +14,22 @@ code {
 }
 i {
   cursor: pointer;
+}
+.btn {
+  width: 100%;
+}
+
+@media (min-width: 168px) {
+  .container {
+    max-width: 27rem;
+    border-radius: 5px;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+    background-color: white;
+  }
+}
+
+.surname {
+  margin-top: 3rem;
 }

@@ -29,7 +29,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
@@ -44,9 +44,6 @@ const Login = () => {
             name="email"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
@@ -62,7 +59,7 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="my-4 btn btn-primary">
           Submit
         </button>
       </form>
